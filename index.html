@@ -3911,6 +3911,524 @@ Legge notes that "the subject should not be intemperate in his joy."` }
     ]
   }
 };
+const LEGGE_LINES = {
+  1: [
+    "The first line, undivided, shows the dragon lying hid in the deep — it is not the time for active doing. The yang virtue is stored, not yet displayed; the superior man lies retired, not yet coming forward.",
+    "The second line, undivided, shows the dragon appearing in the field. The virtue of heaven progresses; the superior man begins to manifest his virtue and it will be advantageous to meet the great man.",
+    "The third line, undivided, shows the superior man active and vigilant all the day, and in the evening still careful and apprehensive. The position is dangerous but there will be no error.",
+    "The fourth line, undivided, shows the dragon as if he were leaping up, but still in the deep. There will be no mistake. He is in a doubtful position, committed to no definite course.",
+    "The fifth line, undivided, shows the dragon flying in the sky. It will be advantageous to meet the great man. The sage is in the place of honour; his virtue is fully displayed.",
+    "The sixth line, undivided, shows the dragon exceeding proper limits. There will be occasion for repentance. The extreme of high position brings the tendency to error.",
+    "When all the lines are undivided, it shows the dragon host without their heads. There will be good fortune. The virtue of the undivided lines, all changed, shows the merit of not asserting leadership."
+  ],
+  2: [
+    "The first line, divided, shows its subject treading on hoarfrost. Strong ice will be formed by and by. The first advance of the yin cold; when small beginnings are not arrested, they grow to great ends.",
+    "The second line, divided, shows the attributes of being straight, square, and great. Its operation, without repeated efforts, will be in every respect advantageous. These three virtues describe the ideal nature of the earth.",
+    "The third line, divided, shows its subject keeping his excellence under restraint. If he should engage in the royal service, he will not claim success for himself, but will bring affairs to a good issue. The virtue of the secondary position.",
+    "The fourth line, divided, shows the symbol of a tied-up sack. There will be no ground for blame or for praise. The subject holds himself completely in check, neither advancing nor retreating.",
+    "The fifth line, divided, shows the yellow lower-garment. There will be great good fortune. Yellow is the correct central colour, and the lower garment is the inner clothing — indicating virtue that is genuine and internal.",
+    "The sixth line, divided, shows dragons fighting in the open country. Their blood is purple and yellow. When yin goes to its extreme and contends with yang, both are wounded.",
+    "When all the lines are divided, perpetual firmness and correctness will be advantageous. The subject must maintain the virtue of yielding constancy without deviation."
+  ],
+  3: [
+    "The first line, undivided, shows the difficulty its subject has in advancing. It will be advantageous for him to abide correct and firm; advantageous also to be made a feudal ruler. Standing still is correct at the beginning; what is correct now is to maintain the ground.",
+    "The second line, divided, shows its subject distressed and obliged to return; even the horses of her chariot seem to be retreating. But not by a spoiler is she assailed; she will go on to seek matrimonial union. Advance is for the time impossible; one must wait.",
+    "The third line, divided, shows its subject, without guidance, entering the forest, where he sees nothing but stags. The superior man, understanding the tendencies of the time, will prefer to give up the chase. To go forward would bring regret.",
+    "The fourth line, divided, shows its subject, mounted in her chariot, seeking matrimonial union. Advance will be fortunate; all will turn out advantageously. When the obstacle has lasted long, action becomes right.",
+    "The fifth line, undivided, shows the difficulties in the way of its subject's dispensing the rich favors that might be expected from him. With firmness and correctness there will be good fortune in small things; in great things there will be evil.",
+    "The sixth line, divided, shows its subject with the horses of his chariot obliged to retreat, and weeping tears of blood in streams. One who finds himself at the extremity of difficulty, with no one to help him, must simply abide in his position."
+  ],
+  4: [
+    "The first line, divided, shows its subject with the ignorance belonging to youth. It will be advantageous for him to be kept from doing wrong, as we keep a man in ignorance by letting him suffer for it. The use of punishment and restraint at the outset.",
+    "The second line, undivided, shows its subject exercising forbearance with the ignorant, in which there will be good fortune; and admitting even the goodness of women, which will also be fortunate. He is able to nourish and manage the young.",
+    "The third line, divided, shows a girl, on whose account action should not be taken to get a husband. No advantage comes from it. She who throws herself at a man of wealth is not worthy of him.",
+    "The fourth line, divided, shows its subject bound in chains of ignorance. There will be occasion for regret. He is separated from those who could help him, and the result is distress.",
+    "The fifth line, divided, shows its subject as a little boy without experience. There will be good fortune. He has the humility appropriate to the young who accepts instruction.",
+    "The sixth line, undivided, shows its subject smiting the ignorant youth. But no advantage will come from doing him an injury. Advantage would come from warding off injury from him. Correction must not be excessive or vindictive."
+  ],
+  5: [
+    "The first line, undivided, shows its subject waiting in the distant border. It will be well for him constantly to maintain the purpose thus shown, in which case there will be no error. Waiting at a distance, he maintains his resolution.",
+    "The second line, undivided, shows its subject waiting on the sand of the mountain stream. He will suffer the small injury of being spoken against, but the end will be good. He is nearer the danger but not in it; he will not be swept away.",
+    "The third line, undivided, shows its subject in the mud close by the water. He thereby invites the approach of injury. He has advanced too far; he is in perilous proximity to the danger.",
+    "The fourth line, divided, shows its subject waiting in the place of blood. But he will get out of the cavern. He is in the danger itself; but the very extremity of danger becomes the occasion of escape.",
+    "The fifth line, undivided, shows its subject waiting with food and drink. There will be good fortune if he be firm and correct. He is in the central position of honour and nourishment; correct persistence brings success.",
+    "The sixth line, divided, shows its subject in the cavern. There are three guests coming, without being urged, to give their help. If the subject receive them respectfully, the issue will be good. The end of the period of waiting; unexpected help arrives."
+  ],
+  6: [
+    "The first line, undivided, shows its subject not perpetuating the matter of the lawsuit. He will suffer a little loss, but the end will be good. Stopping the conflict at the outset; a small loss avoids a greater one.",
+    "The second line, undivided, shows its subject unequal to the contention. If he retire and keep concealed in his own city with only three hundred families, he will fall into no mistake. The strong opponent is too much for him; wise retirement.",
+    "The third line, divided, shows its subject keeping in the old place assigned for his support. Firmly correct, he will meet with good fortune. If he should engage in the royal service, he will not claim the merit of what he does. The subject contents himself with his proper position.",
+    "The fourth line, undivided, shows its subject unequal to the contention. He returns and studies the ordinances. He changes his wish to contend. He will be fortunate if he rests in being firm and correct. Returning to study and correctness.",
+    "The fifth line, undivided, shows its subject engaged in the contention. There will be great good fortune. The position is correct and central; the cause is just.",
+    "The sixth line, undivided, shows how its subject may have the leathern belt conferred on him, and three times it shall be taken from him in a morning. Though the belt of honour is awarded, it is repeatedly taken back — no lasting benefit from litigation."
+  ],
+  7: [
+    "The first line, divided, shows the host going forth according to the rules for such a movement. If these be not good, there will be evil. The first essential is discipline and correct procedure at the outset.",
+    "The second line, undivided, shows its subject in the midst of the host. There will be good fortune and no error. The king will thrice convey to him the orders of his favour. The place of the host's commander; he receives the royal mandate.",
+    "The third line, divided, shows how the host may, possibly, have many ineffective leaders. There will be evil. When the command is divided among many, the result is defeat.",
+    "The fourth line, divided, shows the host in retreat. There is no error. The army that retreats when defeat is likely is not making an error but showing wisdom.",
+    "The fifth line, divided, shows birds in the fields which it will be advantageous to seize and destroy. In that case there will be no error. If the eldest son leads the army and younger men are employed, however firm they may be, there will be evil. When rebellion breaks out, it must be decisively suppressed.",
+    "The sixth line, divided, shows the great ruler delivering his charges, appointing some to be rulers of states, and others to undertake the headship of clans; but small men should not be employed. After victory, the ruler apportions rewards, but must not favour the unworthy."
+  ],
+  8: [
+    "The first line, divided, shows its subject seeking by his sincerity to win the attachment of his object. There will be no error. Let there be sincerity as in an earthen vessel; it will in the end bring other advantages. The sincerity that is plain and genuine prevails.",
+    "The second line, divided, shows the movement towards union and attachment proceeding from the inward self. With firm correctness there will be good fortune. Coming from within, the union is genuine and auspicious.",
+    "The third line, divided, shows its subject seeking for union with such as ought not to be associated with. He is seeking union with the wrong people; the association will be harmful.",
+    "The fourth line, divided, shows its subject seeking for union with the one beyond himself. With firm correctness there will be good fortune. He advances to associate with him who is above; with correct purpose the union succeeds.",
+    "The fifth line, undivided, shows the innate desire for union. The king, instead of pursuing those who flee, sends out his hunters, who are then directed only to attack those who come forward. His people need no admonition to trust him. Good fortune. The king's magnanimity draws voluntary allegiance.",
+    "The sixth line, divided, shows its subject seeking union with others, but having no proper head or beginning. There will be evil. Coming too late and without proper foundation, the union fails."
+  ],
+  9: [
+    "The first line, undivided, shows its subject returning and pursuing his own course. What error should he fall into? There will be good fortune. Knowing when to turn back and follow one's own path is itself good fortune.",
+    "The second line, undivided, shows its subject, by the attraction of the former line, returning to the course. This is fortunate. He is drawn back to the right path; the return is auspicious.",
+    "The third line, undivided, suggests the idea of a carriage the strap of which has been removed, or of a husband and wife looking on each other with averted eyes. The bond is strained; progress is obstructed for the time.",
+    "The fourth line, divided, shows its subject in a condition of firm correctness, and free from all danger. But if he proceed, and the blood of conflict depart, apprehension will also give way, and there will be no mistake. The single yin checks the advance of the yang lines.",
+    "The fifth line, undivided, shows its subject with others linked to him by sincerity and drawing out his rich resources. He need not use force with his neighbours; they are attached to him. Rich good fortune results from genuine sincerity.",
+    "The sixth line, undivided, shows the rain falling and the (good) resting. This is due to the complete triumph of the upper divided line. The wife by her firm correctness is in a position of peril. The moon is nearly full; if the superior man prosecutes his measures, there will be evil. The restrained yang power is nearly exhausted; the moment of completion must be recognized."
+  ],
+  10: [
+    "The first line, undivided, shows its subject treading his accustomed path. If he go forward, there will be no error. The simplicity of proceeding in the ordinary way without ostentation.",
+    "The second line, undivided, shows a person treading the path that is level and easy — a quiet, solitary man, to whom, if he be firm and correct, there will be good fortune. Straightforward conduct on a smooth path; correct solitude is fortunate.",
+    "The third line, divided, shows a one-eyed man who thinks he can see; a lame man who thinks he can walk well. He treads on the tail of a tiger. The tiger bites him. There will be evil. A person in an unfit position ventures what he cannot accomplish; the result is injury.",
+    "The fourth line, undivided, shows its subject treading on the tail of a tiger. He becomes full of apprehensive caution, and in the end there will be good fortune. Caution in a dangerous situation converts the hazard to safety.",
+    "The fifth line, undivided, shows the resolute treading of its subject. Though he be firm and correct, there will be peril. The boldness of the strong man in the place of authority; firmness is right but the position is exposed.",
+    "The sixth line, undivided, tells us to look at the whole course that is trodden, and examine the presage which that gives. If it be complete and without failure, there will be great good fortune. Looking back over all one has done to verify its rightness — then great good fortune."
+  ],
+  11: [
+    "The first line, undivided, shows its subject pulling up the grass, with the roots of the other blades clinging to it. An advance on his part will be fortunate. Like-minded persons advance together; mutual assistance from the outset is fortunate.",
+    "The second line, undivided, shows one who can bear with the uncultivated, will cross the river without a boat, does not forget the distant, and has no selfish friendships. Such a one will prove able to tread the due mean. The superior man's breadth and impartiality in prosperous times.",
+    "The third line, undivided, shows that, while there is no state of peace that is not liable to be disturbed, and no departure of evil men so that they shall not return, yet when one is firm and correct in this, he will not fall into error. There need be no sadness at this; for there may be comfort in the thought that in the eating and drinking of the present there is the enjoyment of future good. Times change; hold firmly to the right in the time of peace.",
+    "The fourth line, divided, shows its subject fluttering about; not making use of the wealth of his neighbours, but in the sincerity of his heart appealing to them for their trust. Genuine simplicity and unpretentious appeal in the time of union.",
+    "The fifth line, divided, reminds us of king Ti-yi's rule about the marriage of his younger sister — by which the younger members of the royal family were not to be treated better than the elder. This will bring great good fortune, and show the superior man's correct position. Proper order is maintained even in the time of greatest prosperity.",
+    "The sixth line, divided, shows us the city wall returned into the moat. It is not the time to use the army. The subject may, in his own capital, announce his orders; but though he be firm and correct, he will have cause for regret. The time of prosperity has ended; decline sets in."
+  ],
+  12: [
+    "The first line, divided, shows its subject pulling up the grass, with the roots of the other blades clinging to it. With firm correctness, there will be good fortune and progress. The inferior man cleaves to his kind; the superior man, though sharing in the obstruction, maintains his correctness.",
+    "The second line, divided, shows its subject patient and obedient. To the inferior man, one who so acts will fall into confusion; but to the great man, proceeding with such qualities, there will be good fortune. Humble service in time of obstruction is right for the inferior, but the great man must serve correctly.",
+    "The third line, divided, shows its subject ashamed of the purpose folded in his breast. The person of capacity will feel shame at the cause of the obstruction; this shame itself shows some virtue remaining.",
+    "The fourth line, undivided, shows its subject acting in accordance with the ordination of Heaven. He falls into no error, and his companions will come and share in his happy state. Those who act rightly in the time of obstruction find their proper associates.",
+    "The fifth line, undivided, shows him who brings the distress of the time to an end. The great man and his good fortune! But let him say, 'We may perish, we may perish'; so shall the state of things become as if bound to a clump of bushy mulberry trees. The great man ends the obstruction; but he keeps hold on the anxiety lest it return.",
+    "The sixth line, undivided, shows the overthrowingof the condition of obstruction. Before this there was that condition; hereafter there will be joy. The period of stagnation comes to its natural end and gives way to joy."
+  ],
+  13: [
+    "The first line, undivided, shows the representative of the union of men just issuing from his gate. There will be no error. The most open and public fellowship — fellowship extended to all without distinction of persons.",
+    "The second line, divided, shows the representative of union with men in relation with his kindred. There will be occasion for regret. Fellowship limited to those of the same clan is narrow and will bring regret.",
+    "The third line, undivided, shows its subject with his arms hidden in the thick grass, and ascending the lofty mound before him. But for three years he makes no demonstration. The violence of a man who has fallen out with associates; he lurks in concealment but cannot act.",
+    "The fourth line, undivided, shows its subject mounted on his wall; but he does not proceed to make the attack he contemplated. There will be good fortune. The subject recognizes the right and desists from attack; the result is fortunate.",
+    "The fifth line, undivided, shows the representative of the union of men first wailing and crying, and then laughing. His great host conquers, and he and the subject of the second line meet together. First difficulty and sorrow, then the union is achieved.",
+    "The sixth line, undivided, shows the representative of the union of men in the suburbs. There will be no occasion for repentance. The union extends even to the distant suburbs, though it does not reach the full development of ideal fellowship."
+  ],
+  14: [
+    "The first line, undivided, shows no approach to what is injurious, and there is no mistake. If he be difficult, and is so firm and correct, there will be no mistake. He starts his great possession without error; keeping free from what is harmful.",
+    "The second line, undivided, shows a large wagon with its load. In whatever direction advance is made, there will be no error. The large capacity sufficient to carry the great load; the ability to advance in any direction.",
+    "The third line, undivided, shows us a feudal prince presenting his offerings to the Son of Heaven. A small man would be unequal to such a duty. The subject in the correct position of authority; only those fit for great responsibility should occupy such places.",
+    "The fourth line, undivided, shows its subject keeping his great resources under restraint. There will be no mistake. He does not display or boast of what he has; the restraint of great wealth is itself virtue.",
+    "The fifth line, divided, shows the sincerity of its subject reciprocated by that of all the others represented in the hexagram. Let him display a proper majesty; there will be good fortune. The single yin in the place of honour, whose sincerity is met by the sincerity of all the yang lines.",
+    "The sixth line, undivided, shows its subject with help accorded to him from Heaven. There will be good fortune, advantage in every respect. Heaven itself assists the virtuous man in the place of great possession."
+  ],
+  15: [
+    "The first line, divided, shows its subject, the modest man, wading through rivers. He will be able to cross the great stream. There will be good fortune. Modesty undertaking the most difficult things; it succeeds.",
+    "The second line, divided, shows its subject giving expression to his modesty. With firm correctness there will be good fortune. When modesty finds outward expression in conduct, with firm correctness it brings good fortune.",
+    "The third line, undivided, shows the superior man of acknowledged merit. He will maintain his success to the end, and have good fortune. The man of real achievement maintains modesty; he preserves his success.",
+    "The fourth line, divided, shows one, whose action would be in every way advantageous, stirring up and making more prominent his modesty. There will be no mistake. Modesty that is active and self-evident; though somewhat ostentatious, it is genuinely advantageous.",
+    "The fifth line, divided, shows one who, without being rich, is able to employ his neighbours. It will be advantageous to use the force of arms. All his movements will be advantageous. The man of modesty in the position of authority uses others effectively.",
+    "The sixth line, divided, shows its subject giving expression to his modesty. It will be advantageous to put his armies in motion, and chastise his own cities and state. Modesty that is too complete withdraws from public life; even self-examination and self-correction may require action."
+  ],
+  16: [
+    "The first line, divided, shows its subject proclaiming his pleasure and satisfaction. There will be evil. The man who boasts of his happiness at the outset, relying on others, brings evil on himself.",
+    "The second line, divided, shows one who is firm as a rock. He sees a thing without waiting till it has come to pass. With firm correctness there will be good fortune. The man who does not need the crowd's approval; he reads the signs early and acts.",
+    "The third line, divided, shows one looking up for favors, while he indulges the feeling of pleasure and satisfaction. If he would understand! If he be late in doing so, there will indeed be occasion for repentance. He who depends on another's approval for his enthusiasm; if he wakens too late, there is regret.",
+    "The fourth line, undivided, shows him from whom the harmony and satisfaction come. He is able to attain great things. Have no doubts. You will bring all your friends around you. The source of enthusiasm — the strong line in the place of influence; friends gather.",
+    "The fifth line, divided, shows one with a chronic complaint, but who lives on without dying. He is in the place of honour but weak; suffering continues but does not end.",
+    "The sixth line, divided, shows its subject with darkened mind devoted to the harmony and satisfaction of the time; but if he would change his course even when it may be considered as completed, there would be no mistake. Even when enthusiasm has gone to excess, turning back is still possible."
+  ],
+  17: [
+    "The first line, undivided, shows its subject, as a matter requiring consideration, changing the object of his pursuit. By firmly correct action there will be good fortune. He goes beyond his gate to find associates, and will achieve merit. At the beginning, right conduct in following brings auspicious results.",
+    "The second line, divided, shows its subject attached to the little boy, and thus losing the strong man. He who clings to what is small loses what is great; the association chosen determines the character that follows.",
+    "The third line, divided, shows its subject attached to the strong man, and losing the little boy. Such following will get what it seeks, but it will be advantageous to adhere firmly to correctness. By following the great man, the small things are lost, but right purpose is preserved.",
+    "The fourth line, undivided, shows its subject followed and obtaining adherents. Though he is firm and correct there will be evil. If he be sincere in his course and make that evident, what error can there be? Following that attracts others demands special sincerity; without it even correctness does not avoid trouble.",
+    "The fifth line, undivided, shows its subject sincerely united to what is excellent. There will be good fortune. The man who follows what is genuinely good; unmistakable good fortune.",
+    "The sixth line, divided, shows its subject holding fast to and even increasing his adherence. The king presents his offerings on the western mountain. The utmost in following, even beyond ordinary bonds; the royal sacrifice that acknowledges the highest following."
+  ],
+  18: [
+    "The first line, divided, shows its subject dealing with the troubles caused by his father. If he be a son who does this, the father will be exempt from blame. The peril of such a beginning requires careful handling, but if the son does his duty, the father is cleared.",
+    "The second line, undivided, shows its subject dealing with the troubles caused by his mother. He should not carry his firm correctness to the utmost. A son correcting his mother's errors must not be too severe or rigid.",
+    "The third line, undivided, shows its subject dealing with the troubles caused by his father. There may be some small occasion for repentance, but there will not be any great error. Correcting his father's faults with vigor; slight excess but no great fault.",
+    "The fourth line, divided, shows its subject acting with laxity in dealing with the troubles caused by his father. If he go forward, he will find cause for regret. Dealing too leniently with inherited troubles leads to regret.",
+    "The fifth line, divided, shows its subject dealing with the troubles caused by his father. He obtains the praise of using the fit instrument for his work. The right means applied to correct inherited faults wins approval.",
+    "The sixth line, undivided, shows its subject not serving either king or feudal lord, but in a lofty spirit attending to his own affairs. The man who withdraws from public service and cultivates his own virtue at the end of the time of corruption."
+  ],
+  19: [
+    "The first line, undivided, shows its subject advancing in company with the subject of the second line. Through firm correctness there will be good fortune. Advancing together at the beginning with correct intention; good fortune.",
+    "The second line, undivided, shows its subject advancing in company with the subject of the first. There will be good fortune; advancing will be in every way advantageous. Moving forward together; the time is right for advance.",
+    "The third line, divided, shows its subject well pleased to advance, but his action will be in no way advantageous. If he become anxious about it however, there will be no mistake. The time of approach tempts to lax advance; anxiety about it keeps one from error.",
+    "The fourth line, divided, shows its subject advancing in the highest mode. There will be no mistake. Advance in the most correct and central way; no error.",
+    "The fifth line, divided, shows the advance of wisdom, such as becomes a great prince, and will be fortunate. The great ruler advancing wisely, reaching out with genuine care for his people.",
+    "The sixth line, divided, shows the advance of honesty and generosity. There will be good fortune, and no mistake. The ideal completion of the time of approach; open-hearted and generous advance."
+  ],
+  20: [
+    "The first line, divided, shows a lad contemplating. For an inferior man, there will be no error; but the superior man should feel shame at such a superficial contemplation. Mere surface observation is acceptable for the uninstructed but insufficient for the man of cultivation.",
+    "The second line, divided, shows one peeping out from a door. It would be advantageous if it were merely the firm correctness of a woman. Narrow, restricted contemplation; suitable only for the domestic sphere, not for one in public responsibility.",
+    "The third line, divided, shows one looking at the course of his own life, to advance or recede accordingly. Contemplating oneself — one's own life and progress — to determine how to proceed.",
+    "The fourth line, divided, shows one contemplating the glory of the kingdom. It will be advantageous for him, being such as he is, to seek to be a guest of the king. The man of ability contemplates the state's condition; it is right for him to enter royal service.",
+    "The fifth line, undivided, shows its subject contemplating his own life-course. A superior man, he will fall into no error. The ruler or the man of authority turns the gaze back on his own life; being a superior man, he will not err.",
+    "The sixth line, undivided, shows its subject contemplating his character to see if it be indeed that of a superior man. He will not fall into error. Examining whether one's character is genuinely superior — this is the highest and most fruitful contemplation."
+  ],
+  21: [
+    "The first line, undivided, shows one with his feet in the stocks and deprived of his toes. There will be no mistake. Punishment applied at the very beginning, before the offense has become established; restraint is still light.",
+    "The second line, divided, shows one biting through the soft flesh, and then proceeding to bite off the nose. There will be no mistake. Biting through easily; the punishment is appropriate to the offense.",
+    "The third line, divided, shows one gnawing dried flesh, and meeting with what is poisonous. There will be a small cause for shame, but no mistake in the end. Old, hardened matter; some difficulty is encountered but the end is correct.",
+    "The fourth line, undivided, shows one gnawing the flesh dried on the bone, and getting the pledges of money and arrows. It will be advantageous to him to realize the difficulty of his task and be firm, in which case there will be good fortune. The hardest case requires the most determined effort.",
+    "The fifth line, divided, shows one gnawing at dried flesh, and finding the yellow gold. Let him be firm and correct; in which case there will be no mistake. Correct and central position; finding the gold is finding the right principle.",
+    "The sixth line, undivided, shows one wearing the cangue and deprived of his ears. There will be evil. The final extreme of punishment, applied to one who has lost the capacity to hear — who has been incorrigible."
+  ],
+  22: [
+    "The first line, undivided, shows one adorning himself and then going forward on foot. He puts aside his carriage and walks. The man of grace who walks humbly to cultivate himself.",
+    "The second line, divided, shows one adorning his beard. The grace that enhances and follows from the genuine virtue within; adornment of what is real.",
+    "The third line, undivided, shows its subject with the appearance of being adorned and bedewed with rich favors. But let him be ever firm and correct and there will be good fortune. Grace so complete it seems like dew; but it must be maintained with constant correctness.",
+    "The fourth line, divided, shows one looking as if adorned, but only in white. As if mounted on a white horse, and furnished with wings. He is not a spoiler, but will seek union with the one of the first line. The simplicity of white: adornment that seeks its proper partner.",
+    "The fifth line, divided, shows its subject adorning himself in the gardens and mansions of the hill. He bears rolls of silk, though small in quantity. He will have occasion for shame, but will be fortunate in the end. Simple gifts offered with genuine sincerity; humility and good faith overcome the inadequacy of the offering.",
+    "The sixth line, undivided, shows one with white as his only ornament. There will be no mistake. The highest grace needs no adornment beyond simplicity; white, the plain, the unadorned, is the completion of grace."
+  ],
+  23: [
+    "The first line, divided, shows a bed, the legs of which are being split away. Those who do this are in contempt of all firm correctness. There will be evil. The base of the structure is being eroded; those doing it despise correctness.",
+    "The second line, divided, shows a bed, the framework of which is being split away. Those who do this are in contempt of all firm correctness. There will be evil. The destruction continues upward to the frame; the same result.",
+    "The third line, divided, shows its subject among the splitters asunder; but there will be no mistake. He has severed connection with the inferior and associated with the superior; thus no mistake.",
+    "The fourth line, divided, shows a bed, the skin of which is being split away. There will be evil. The destruction has reached the surface of the bed — approaching the person lying on it; danger is immediate.",
+    "The fifth line, divided, shows its subject leading on the others like a string of fishes, and obtaining for them the favor of the inmates of the palace. There will be in the end no mistake. The yin lines follow in order; the fish-string image of consecutive dependence ending in the favor of the superior.",
+    "The sixth line, undivided, shows a great fruit which has not been eaten. The superior man finds the people as a chariot carrying him. The inferior man by such circumstances overturn their shelter. The single yang at the top — the great fruit not yet consumed; the people support the great man."
+  ],
+  24: [
+    "The first line, undivided, shows its subject returning from no great distance. There is no need for great repentance. There will be good fortune. The quickest recovery — returning almost immediately; little was lost.",
+    "The second line, divided, shows the admirable return of its subject. There will be good fortune. The good man who draws another back to return; the quality of the return is admirable.",
+    "The third line, divided, shows one who has made repeated returns. The position is perilous, but there will be no mistake. Returning repeatedly — losing the way and finding it again; the effort to return is itself praiseworthy.",
+    "The fourth line, divided, shows its subject moving right in the center and yet alone returning. The return of the central correct man who returns alone to the right path.",
+    "The fifth line, divided, shows the noble-minded return of its subject. There will be no ground for repentance. The noblest kind of return — made with conscious virtue and clear purpose.",
+    "The sixth line, divided, shows its subject all astray on the subject of returning. There will be evil. There will be calamities and errors. If with his views he put the hosts in motion, the end will be a great defeat, whose issues, for the state with which he is connected, will be calamitous for ten years. The worst return — missing the moment entirely; action in the wrong direction at this time is disastrous."
+  ],
+  25: [
+    "The first line, undivided, shows its subject free from all insincerity. His advance will be accompanied with good fortune. In the very nature of innocence, the first movement without ulterior motive is auspicious.",
+    "The second line, divided, shows one who reaps without having ploughed that he might reap, and who gathers the produce of his third year's fields without having cultivated them the first year for that end. To such a one there will be advantage in whatever direction he may move. True innocence acts without thought of reward; things come to him naturally.",
+    "The third line, divided, shows calamity happening to one who is free from insincerity — as in the case of an ox that has been tied up. A passerby finds it and takes it. The town-people's calamity is the stranger's gain. Even the innocent can suffer from undeserved misfortune; innocence does not guarantee immunity.",
+    "The fourth line, undivided, shows a case in which firm correctness will lead to no mistake. The innocent can maintain correctness and thus avoid error.",
+    "The fifth line, undivided, shows its subject free from insincerity, and yet becoming ill. Let him not use medicine, and he will have occasion for joy. Even illness that comes without cause should be met with trust; no human remedy is needed.",
+    "The sixth line, undivided, shows its subject free from insincerity, but in the wrong place. Any action on his part will give occasion for regret. Even the innocent can be in the wrong position; action at such a time brings regret."
+  ],
+  26: [
+    "The first line, undivided, shows its subject in a position of peril. It will be advantageous for him to stop his advance. The strong energy restrained from advancing; stopping is advantageous.",
+    "The second line, undivided, shows a carriage under which the strap has been removed. The axle is disconnected; the strength is restrained and the advance halted. This is the right thing.",
+    "The third line, undivided, shows its subject urging his way with good horses. It will be advantageous for him to realize the difficulty of his course, and to be firm and correct, exercising himself daily in his charioteering and methods of defense; then there will be advantage in whatever direction he may advance. The strong advance is possible but requires constant practice in right methods.",
+    "The fourth line, divided, shows the young bull, and yet having the piece of wood over his horns. There will be great good fortune. Taming and restraining the strength of the yang lines; the preventive measure of the wood over the horns of the young bull.",
+    "The fifth line, divided, shows the tusk of a castrated boar. There will be good fortune. The tusk restrained at the root; the strength is managed at its source.",
+    "The sixth line, undivided, shows its subject as in command of the firmament of heaven. There will be progress. The period of restraint is complete; the restrained energy is now released into the open sky."
+  ],
+  27: [
+    "The first line, undivided, shows its subject putting aside his efficacious tortoise, and looking at me with his mouth drooping. There will be evil. The man of ability looking at another's nourishment with desire, ignoring his own means.",
+    "The second line, divided, shows its subject looking downwards for nourishment, which is contrary to what is proper; or seeking it from the height above, which, if he advance to do so, will lead to evil. Seeking nourishment in the wrong direction — either below or above when one should nourish oneself properly.",
+    "The third line, divided, shows one acting contrary to the method of nourishing. However firm he may be, there will be evil. For ten years let him not take any action; for there is no advantage in any direction. Wrong methods of nourishment; no corrective action should be taken for a long time.",
+    "The fourth line, divided, shows one looking downwards for the power to nourish. There will be good fortune. Looking out from his lofty position and nourishing those below him; this is the duty of those in authority.",
+    "The fifth line, divided, shows one acting contrary to what is regular and proper; but if he abide in firmness and correctness, there will be good fortune. He should not, however, try to cross the great stream. Departing from normal patterns of nourishment; if held to correctness it is fortunate, but no great ventures.",
+    "The sixth line, undivided, shows whence the nourishment comes. The position is one of peril and there will be good fortune. It will be advantageous to cross the great stream. The source of all nourishment; from the position of complete responsibility, bold action is now right."
+  ],
+  28: [
+    "The first line, divided, shows one placing mats of the white grass under things set on the ground. There will be no mistake. What is proper in approaching something important; care in preparation prevents error.",
+    "The second line, undivided, shows a decayed willow producing shoots, or an old husband getting his young wife. There is advantage in everything. The old yang revived; unexpected new growth from what seemed spent.",
+    "The third line, undivided, shows a ridge-beam that is weak. There will be evil. The weight is too great; the structure cannot bear it — danger.",
+    "The fourth line, undivided, shows a ridge-beam curving upwards. There will be good fortune. If the beam curves upward rather than sagging, the structure holds and good fortune results.",
+    "The fifth line, undivided, shows a decayed willow producing flowers, or an old wife getting her young husband. There will be no blame, no praise. Beauty that has no lasting power; the extraordinary that produces only temporary results.",
+    "The sixth line, divided, shows one who has to wade through the stream till the water is over his head. There will be evil, but no blame. Going beyond one's depth in the time of excess; the disaster comes but without fault, since the situation itself demanded it."
+  ],
+  29: [
+    "The first line, divided, shows its subject in the double defile, and entering a cavern within it. There will be evil. At the outset already at the bottom of the abyss; entering deeper into danger.",
+    "The second line, undivided, shows its subject in all the peril of the defile. He will, however, get a little of the deliverance that he seeks. In the danger itself, some small deliverance is possible.",
+    "The third line, divided, shows its subject, whether he comes or goes, confronted by the defile, which is full of peril. In such circumstances he should do nothing, lest he fall into the pit. Do not rely upon the help of others. No movement is right when danger is on every side.",
+    "The fourth line, divided, shows its subject at a feast, with simply a bottle of spirit, and a subsidiary basket of rice, while the cups and bowls are only of earthenware. He should introduce his important lessons as he best can. There will in the end be no mistake. Simple provisions in the place of difficulty; sincerity in bare form is sufficient.",
+    "The fifth line, undivided, shows the water of the defile not yet full, so that it might flow away; but order will soon be brought about. There will be no mistake. The danger is not yet at its worst; the crisis will pass.",
+    "The sixth line, divided, shows its subject bound with cords of three strands or two strands, and placed in the thicket of thorns. But in three years he does not learn the course for him to pursue. There will be evil. The most extreme imprisonment in danger; no escape is found even with time."
+  ],
+  30: [
+    "The first line, undivided, shows one in confusion at the beginning of his advance. He treats the subject with respect. There will be no mistake. Confused footsteps at the start — but respectful attention; careful beginning avoids error.",
+    "The second line, divided, shows its subject in his place in yellow. There will be great good fortune. Yellow is the central, correct color; central correct position brings great good fortune.",
+    "The third line, undivided, shows its subject in a position like that of the declining sun. Instead of playing on his instrument of earthenware, and singing to it, he utters the groans of an old man of eighty. There will be evil. Knowing that the time of brightness is declining, he should not rejoice; anxiety is right at the end of the day.",
+    "The fourth line, undivided, shows the manner of its subject's coming. How abrupt it is, as with fire, with death, to be rejected! The sudden, violent advance; like a flame — brilliant but brief.",
+    "The fifth line, divided, shows its subject as one sending forth tears in torrents, and groaning in sorrow. There will be good fortune. The deepest sorrow at the center of brightness — genuine grief at the state of things brings good fortune.",
+    "The sixth line, undivided, shows the king employing his subject in his punitive expeditions. Achieving admirable merit, he breaks only the chiefs of the rebels. Where his prisoners are not their associates, he will not punish. There will be no mistake. The mature application of brightness — discriminating justice in punishment."
+  ],
+  31: [
+    "The first line, divided, shows the influence directed to the toes. There will be no mistake if its subject be firm and correct. The weakest possible influence, at the very extremity; correct purpose prevents it from being an error.",
+    "The second line, divided, shows the influence directed to the calves of the legs. There will be evil. If one abide quiet, there will be good fortune. The influence in the calves urges forward; acting on such weak impulse brings evil. Waiting is right.",
+    "The third line, undivided, shows the influence directed to the thighs, and the will to follow whatever the heart desires. To go forward in this way will be evil. The influence in the powerful muscles; following every desire is not right.",
+    "The fourth line, undivided, shows that firm correctness will lead to good fortune, and prevent all occasion for repentance. If its subject be unsettled in his movements, only his friends will follow his purpose. The influence of the heart; firmness and settled purpose brings good fortune and proper followers.",
+    "The fifth line, undivided, shows the influence directed to the spine above the loins. There will be no occasion for repentance. Influence in the back, above the emotional centres; calm, correct, not moved by passion.",
+    "The sixth line, divided, shows the influence directed to the jaws, cheeks, and tongue. Influence expressed only in words and talk; without substance."
+  ],
+  32: [
+    "The first line, divided, shows its subject seeking for prolonged duration of the power represented by the hexagram. Even with firm and correct action there will be evil. There will be no advantage in any way. Seeking permanence before its proper foundation is laid — forcing endurance too soon.",
+    "The second line, undivided, shows all occasion for repentance disappearing. The capacity for duration in the strong central position; nothing to repent of.",
+    "The third line, undivided, shows one who does not keep his virtue constantly. There are those who will impute this to him as a disgrace. However firm he may be, there will be ground for regret. Inconstancy in virtue — even when corrected, the stain remains.",
+    "The fourth line, undivided, shows a field where there is no game. Acting as if there were what is not there; the hunter who searches in the wrong place finds nothing.",
+    "The fifth line, divided, shows its subject giving duration to his virtue by means of firm correctness. This will be fortunate for a wife, but evil for a husband. For the wife, constancy in her proper sphere is right. For the man in public life, constancy in a fixed course without adaptation would be harmful.",
+    "The sixth line, divided, shows its subject exciting himself to long continuance. There will be evil. Violent effort to maintain duration — forcing what should flow naturally; this agitation produces only instability."
+  ],
+  33: [
+    "The first line, divided, shows a retiring tail. The position is perilous. No movement in any direction should be made. The last line in retreat; at the very end, stopping entirely is wisest.",
+    "The second line, divided, shows its subject holding it fast as if by a thong made from the hide of a yellow ox, which cannot be broken. The will held fast by a firm bond; those who should retreat hold the subject with an unbreakable attachment.",
+    "The third line, undivided, shows one retiring but under the entangling influence, to his distress and peril. If he were to deal with his binders as in nourishing a servant or concubine, it would be fortunate for him. Retreat is right but the entanglement must be managed with wisdom and patience.",
+    "The fourth line, undivided, shows its subject retiring notwithstanding his likings. In a superior man this will lead to good fortune; a small man cannot attain to this. The good man can withdraw from what he likes when the time requires it; the small man cannot.",
+    "The fifth line, undivided, shows its subject retiring in an admirable way. With firm correctness there will be good fortune. The ideal retreat — timely, dignified, with complete correctness.",
+    "The sixth line, undivided, shows its subject retiring in a noble way. It will be advantageous in every respect. The best possible retreat — rich in freedom and fullness of virtue."
+  ],
+  34: [
+    "The first line, undivided, shows its subject manifesting his strength in his toes. Going forward will lead to evil, most certainly. The power is in the extremity — not yet developed to its proper place; advance brings only danger.",
+    "The second line, undivided, shows that with firm correctness there will be good fortune. Strength in the second place; with correctness the result is good.",
+    "The third line, undivided, shows, in the case of a small man, one who uses all his strength; and in the case of a superior man, one who does not do so. Even with firm correctness the position is perilous. Its subject is like a he-goat butting against a fence and getting his horns entangled. The strong man who knows when not to use his strength; the violent man who charges into every obstacle.",
+    "The fourth line, undivided, shows a case in which firm correctness leads to good fortune and occasion for repentance disappears. We see a buffet that is made with vigour. The fence is broken through, and the animal is not entangled. The strength is in the axle of a large carriage. Power applied at the right point; the obstruction is overcome and the strength is properly used.",
+    "The fifth line, divided, shows one who loses his he-goat and does not repent of the loss. The stubborn strength is given up; this is not regretted. Letting the aggressive power go is itself a form of strength.",
+    "The sixth line, divided, shows a he-goat butting against a fence, and unable either to retreat or to advance as he would fain do. There will not be advantage in any respect; but if he realize the difficulty of his position, there will be good fortune. Stuck fast — neither able to advance nor retreat; recognizing the hopeless position is itself auspicious."
+  ],
+  35: [
+    "The first line, divided, shows one wishing to advance, and yet being kept back; to whom, however, there may be granted firm correctness, and there will be good fortune. If trust be not reposed in him, let him be without anxiety, and there will be no mistake. The first step in advancing; correctness maintained even without immediate recognition.",
+    "The second line, divided, shows its subject with the appearance of advancing, and yet being sorrowful. If he be firm and correct, there will be good fortune. He will receive this great blessing from his grandmother. Not yet fully recognized; but the maternal virtue blesses the correct advance.",
+    "The third line, divided, shows its subject trusted by all around him. All occasion for repentance will disappear. The advance that has the confidence of all; regret vanishes.",
+    "The fourth line, undivided, shows one advancing in the manner of a squirrel. However firm and correct he may be, there will be peril. The overcautious, small advance of the squirrel; in so prominent a position, excessive caution is itself dangerous.",
+    "The fifth line, divided, shows how all occasion for repentance disappears from its subject. But let him not concern himself about whether he shall fail or succeed. To advance will be fortunate, and in every way advantageous. The ideal advance — free from anxiety about results; all is well.",
+    "The sixth line, undivided, shows one advancing his horns. But he only uses them to punish the rebellious people of his own city. The consciousness of danger brings good fortune, and there will be no mistake; but however firm and correct he may be, there will be occasion for humiliation. Advance for the sole purpose of correcting one's own faults; necessary but humbling."
+  ],
+  36: [
+    "The first line, undivided, shows, in the case of one who is going through the darkening, the flying of a bird; but he folding his wings. During three days he does not eat. But he has somewhere to go; the host speaks disparagingly of him. The brightness concealed; like a bird that has been struck but still flies — then rests.",
+    "The second line, divided, shows its subject with great success; but the injury extends even to the left thigh. He saves himself by the strength of a horse. There will be good fortune. Wounded but rescuing himself from the danger by vigor.",
+    "The third line, undivided, shows its subject among the southern hunters, who capture the great chief. He cannot be anxious to be firm and correct. Finding and exposing the chief darkener; the brightness strikes at the source of darkness.",
+    "The fourth line, divided, shows its subject just entering the left side of the belly of the dark land. But he has the mind to quit the gate and the courtyard of the lord of darkness. Going into the very heart of the dark power, but already intending to escape.",
+    "The fifth line, divided, reminds us of the condition of the count of Ki. It will be advantageous to be firm and correct. The model of concealed virtue maintaining itself under the most extreme darkness — the count of Ki who served the tyrant without compromising his integrity.",
+    "The sixth line, divided, shows, in the condition of the dark, its subject having ascended the sky; but then, as must be, finding his wings hurtled on him as he illuminated the four quarters of the sky. The darkness that has risen to its height; the artificial brightness falls back into darkness."
+  ],
+  37: [
+    "The first line, undivided, shows its subject establishing restrictive regulations in his household. Occasion for repentance will disappear. Good order begins with good rules, clearly established at the outset.",
+    "The second line, divided, shows its subject taking nothing on herself, but in her central place attending to the preparation of the food. Through her firm correctness there will be good fortune. The correct conduct of the woman in her proper sphere within the household.",
+    "The third line, undivided, shows its subject treating the members of the household with stern severity. There may be occasion for repentance, but there will be good fortune. If wives and children were to be smiling and chattering merely, in the end there would be occasion for regret. Too severe is better than too lax; right order must be maintained.",
+    "The fourth line, divided, shows its subject enriching the family. There will be great good fortune. She who makes the household prosperous; the nourishing function is the basis of family flourishing.",
+    "The fifth line, undivided, shows the influence of the king extending to his family. There will be no cause for fear. There will be good fortune. The ruler who is genuinely virtuous at home; his virtue extends naturally to all.",
+    "The sixth line, undivided, shows its subject possessed of sincere influence and displaying a dignified manner. In the end there will be good fortune. The completion of right order in the household; genuine sincerity, appropriately expressed."
+  ],
+  38: [
+    "The first line, undivided, shows that occasion for repentance will disappear. He has lost his horse, but let him not seek for it; it will return of itself. Mean-looking men present themselves; there will be no mistake. Apparent loss resolves itself; what seems bad company is harmless.",
+    "The second line, undivided, shows its subject happening to meet with his lord in a bye-way. There will be no mistake. The unexpected meeting in an unusual place; the good meeting occurs without formal ceremony.",
+    "The third line, divided, shows its subject with his carriage dragged back, while the oxen in it are pushed back, and he is himself subjected to the shaving of his head and the cutting off of his nose. Not a good beginning, but a good end. Opposition at every turn; but the end is not wrong.",
+    "The fourth line, undivided, shows its subject standing alone, cut off from intercourse with others. He meets with the ruler, and between them there is a sincere agreement; and the two act together notwithstanding the dangers attending their position. Isolation broken by meeting with an unexpected helper; danger shared creates genuine union.",
+    "The fifth line, divided, shows that occasion for repentance will disappear. With his relative of whom he is the ancestor, he unites closely and readily as if he were biting through a piece of skin. When he goes forward, what error can there be? The right union achieved naturally and easily; advance is correct.",
+    "The sixth line, undivided, shows its subject solitary amid the opposition and apparent disunion. He sees his yoke-pig as it were covered with mire, and the carriage loaded with vile men. He first bends his bow against them, and then he lays his bow aside, for he discovers they are not assailants but friends of his bride. As he goes forward, the rain falls and good fortune comes. In the extremity of opposition all reveals itself as what it truly is — not enemies but friends."
+  ],
+  39: [
+    "The first line, divided, shows that advance on the part of its subject will lead to greater difficulties, while remaining stationary will afford ground for praise. The forward movement increases obstruction; the stationary position wins praise.",
+    "The second line, divided, shows the minister of the king struggling with difficulty upon difficulty, and not with a view to his own advantage. Through its subject struggles on, not for personal gain but in faithful service; he will be praised.",
+    "The third line, undivided, shows its subject advancing, but only to greater difficulties. He remains stationary, and returns to his former associates. The strong man who sees the obstruction and turns back to his proper associates; this is wisdom.",
+    "The fourth line, divided, shows its subject advancing, but only to greater difficulties. He remains stationary, and unites with the subject of the line above. The weak cannot advance alone; uniting with the strong above is right.",
+    "The fifth line, undivided, shows its subject struggling with the greatest difficulties, while friends are coming to help him. The strong man in the central correct position; his virtue draws helpers even in difficulty.",
+    "The sixth line, divided, shows its subject going forward, only to increase the difficulties, while his remaining stationary will be productive of great merit. There will be good fortune, and it will be advantageous to meet with the great man. The final position of obstruction; not moving forward but meeting the great man accomplishes what is needed."
+  ],
+  40: [
+    "The first line, divided, shows that its subject will commit no error. The first moment of deliverance; simply not erring — this is sufficient.",
+    "The second line, undivided, shows its subject catch, in hunting, three foxes, and obtaining the yellow arrows. With firm correctness there will be good fortune. The catching of the cunning and deceitful; with central correctness this brings good fortune.",
+    "The third line, divided, shows a porter with his burden, yet riding in a carriage. He will only tempt robbers to attack him. However firm and correct he may try to be, there will be cause for regret. Occupying a position one does not deserve invites misfortune.",
+    "The fourth line, undivided, shows its subject loosening his toes. Friends will then come, between him and whom there will be mutual confidence. Releasing what is bound — giving up false attachments; then genuine friends come.",
+    "The fifth line, divided, shows the superior man executing his function of removing whatever is injurious to the idea of the hexagram; in which case there will be good fortune, and confidence in him will be shown even by the inferior men. The strong man clearing away what is obstructing; confidence follows naturally.",
+    "The sixth line, divided, shows a feudal prince with his bow shooting at a falcon on the top of a high wall, and hitting it. The effect of his action will be in every way advantageous. The decisive act at the right moment; the obstruction is removed."
+  ],
+  41: [
+    "The first line, undivided, shows its subject suspending his own affairs, and hurrying away to help the subject of the fourth line. He will commit no error, but let him consider how far he should contribute of what is his for the other. Acts of self-decrease for others must be appropriate to one's ability and the circumstances.",
+    "The second line, undivided, shows that it will be advantageous for its subject to maintain a firm correctness, and that action on his part will be evil. He can give increase to his associates without diminishing himself. Remaining correctly in one's position; benefit flows without diminishing the giver.",
+    "The third line, divided, shows how, when three men are walking together, one of them is made to quit and leave; and how, when one man is walking alone, he finds his companion. When three are together, decrease occurs; when one is alone, he finds his proper partner.",
+    "The fourth line, divided, shows its subject diminishing the ailment under which he labors by making the subject of the first line hasten to his help, and make him glad. There will be no mistake. Diminishing one's faults by accepting help; turning weakness into gain.",
+    "The fifth line, divided, shows parties adding to the stores of its subject, ten pairs of tortoise shells, and these cannot be opposed. There will be great good fortune. When Heaven itself adds, no human opposition can prevail; this is the highest increase.",
+    "The sixth line, undivided, shows its subject giving increase to others without taking from himself. There will be no mistake. With firm correctness there will be good fortune. It will be advantageous to cross the great stream. He will find helpers but no equilibrium among his own people. True selfless giving that enriches others without cost to oneself; the highest virtue of decrease."
+  ],
+  42: [
+    "The first line, undivided, shows that it will be advantageous for its subject to make a great move to help others. The great and good action of benefit; acting greatly on behalf of others is right.",
+    "The second line, divided, shows parties adding to the stores of its subject, even ten pairs of tortoise shells, and their gifts cannot be opposed. Let him persevere in making the divination for a long time, and good fortune will be his. It will be advantageous even to take the kingdom as the gift of Heaven. The highest increase — when Heaven itself adds, no opposition prevails.",
+    "The third line, divided, shows increase given to its subject by means of what is injurious. There will be no mistake, if he be sincere in his course, and walk in the middle, and report with a prince's seal. When benefit comes through hardship; the sincere report through the proper channel.",
+    "The fourth line, divided, shows its subject walking in the middle, and reporting with a prince's seal to the ruler. He will be followed. It will be advantageous for him to be relied on in such a movement as that of removing the capital. The central correct official; when trusted, he can accomplish major public works.",
+    "The fifth line, undivided, shows its subject with sincere heart seeking to benefit all below. There need be no question about it; the result will be great good fortune. Genuine benevolence from a position of authority; unquestionably auspicious.",
+    "The sixth line, undivided, shows its subject with no one comforting him, while some are even seeking to assail him. He observes no regular rule in the ordering of his heart. There will be evil. Increase that goes beyond proper bounds invites opposition; the one who benefits only himself and not others finds no helpers, only enemies."
+  ],
+  43: [
+    "The first line, undivided, shows its subject with vigorous toes advancing and going forward to what will not be approved of. He goes with it into the weak position of the fifth line, and will make a mistake. Advancing prematurely on the strength of the toes alone; the vigor is not yet backed by preparation.",
+    "The second line, undivided, shows its subject full of apprehension and crying out; arms by night, let there be no anxiety. The position is correct and appropriate. Watchfulness without being overcome by anxiety; preparation maintained in the correct place.",
+    "The third line, undivided, shows its subject with high and prominent cheekbones turning to rain, and showing vexation, while there will be no mistake. The superior man is determined as if he had cut through, and walks alone and encounters the rain, till he is thoroughly wet. He is indignant, but there will be no mistake. The strong man pressing forward alone in adversity; discomfort but no error.",
+    "The fourth line, undivided, shows one from whose buttocks the skin has been stripped, and who walks slowly and with difficulty. If he could act like a sheep led after its companions, occasion for repentance would disappear; but though he hear these words, he will not believe them. The man out of position; he should follow but will not listen.",
+    "The fifth line, undivided, shows the small men like goats flying before him. There will be no cause for regret, if he do not lose sight of what is in his mind. Decisive advance that scatters the inferior; maintaining one's purpose throughout.",
+    "The sixth line, divided, shows its subject without any to cry out to, ending in evil. The breakthrough is complete; the sole remaining yin has no support and no voice."
+  ],
+  44: [
+    "The first line, divided, shows how its subject should be kept like a carriage tied and fastened to a metal drag, in which case, with firm correctness, there will be good fortune. But if he move in any direction, evil will appear, like a lean pig that is sure to keep jumping about. The first yin coming to meet the yang; it must be firmly checked from the first.",
+    "The second line, undivided, shows its subject with a wallet of fish. There will be no mistake. But it will not be advantageous to let the subject of the first line be served before guests. The fish is contained; the yin is managed but should not be allowed to spread.",
+    "The third line, undivided, shows one from whose buttocks the skin has been stripped, so that he walks with difficulty. The position will be perilous, but there will be no great mistake. The uncomfortable position; difficult to advance, but the fundamental error is not great.",
+    "The fourth line, undivided, shows its subject with his wallet, but no fish in it. This will give rise to evil. The fish — the yin element — has escaped from his control; he has lost the management of the situation.",
+    "The fifth line, undivided, shows its subject as a medlar tree overspreading the gourd beneath it, and keeping it concealed. When its subject is firm and correct, a good issue will fall to him as from Heaven. The protecting yang that shelters and manages the yin; Heaven's blessing falls on the correct guardian.",
+    "The sixth line, undivided, shows its subject meeting with what may be likened to a prince's horns. There will be occasion for regret, but there will be no mistake. The encounter at the end; disagreeable but not essentially wrong."
+  ],
+  45: [
+    "The first line, divided, shows its subject with a sincere desire for union, but unable to carry it out, so that disorder is introduced into the sphere of his union. If he cry out for help to his proper correlate, all at once his tears will give place to smiles. He need not mind the temporary difficulty; he should go forward, and there will be no mistake. Sincere desire for union, momentarily frustrated; the call for help is heard.",
+    "The second line, divided, shows its subject led forward by his correlate. There will be good fortune, and freedom from error. There is entire sincerity, and in that case even the small offerings of the vernal sacrifice are acceptable. Being drawn forward by the right association; genuine sincerity is the key.",
+    "The third line, divided, shows its subject striving after union and seeming to sigh, yet nowhere finding any advantage. If he go forward, he will not err, though there may be some small cause for regret. The effort to join what is not naturally one's group; difficult but not wrong.",
+    "The fourth line, undivided, shows its subject in a position of great good fortune, and free from error. There will be no blame. He who holds the great gathering together from a correct and strong position; no blame.",
+    "The fifth line, undivided, shows its subject in his place of dignity. There will be no mistake. If any do not have confidence in him, let him see to it that his virtue is great, long-continued, and firmly correct, and all occasion for repentance will disappear. The ruler at the gathering; genuine and lasting virtue overcomes all doubt.",
+    "The sixth line, divided, shows its subject presenting his oblations with sighs and tears; but there will be no mistake. The unattached who cannot join in the gathering; weeping at what is missed, but no fundamental error."
+  ],
+  46: [
+    "The first line, divided, shows its subject advancing upward with the welcome of those above. There will be great good fortune. The weakest beginning of upward advance, welcomed and assisted by those above.",
+    "The second line, undivided, shows its subject with that sincerity which will make it advantageous to present the small offerings of the spring sacrifice. There will be no mistake. Sincerity in one's proper position; the small but genuine offering is accepted.",
+    "The third line, undivided, shows its subject ascending upward as into an empty city. The path is open and unobstructed; the advance encounters no resistance.",
+    "The fourth line, divided, shows its subject employed by the king to present his offerings on mount Khî. There will be good fortune, and no mistake. Honored with the royal charge of the sacred ceremony; the highest recognition of merit.",
+    "The fifth line, divided, shows its subject with firm correctness, and thus realizing good fortune. He ascends the stairs of the royal palace. As one in a high position, correct and firm, rising step by step to the highest level.",
+    "The sixth line, divided, shows its subject advancing upward blindly. Advantage will be found in a ceaseless maintenance of firm correctness. The blind, unthinking advance; only constant correctness prevents disaster."
+  ],
+  47: [
+    "The first line, divided, shows its subject with bare buttocks straitened under the stump of a tree. He enters a dark valley, and for three years has no prospect of deliverance. The deepest oppression; no prospect of relief for a long time.",
+    "The second line, undivided, shows its subject straitened amid his wine and viands. The person with the red knee-bands is just approaching. It will be advantageous to be sincere in offering sacrifice. To advance will lead to evil, but there will be no mistake in abiding firm. Oppressed even amid abundance; the right person comes. Sincerity in place of action.",
+    "The third line, divided, shows its subject straitened before a frowning rock. He lays hold of thorns. He enters his palace, and does not see his wife. There will be evil. Oppression at every turn — the rock in front, the thorns to grasp; even the household is empty.",
+    "The fourth line, undivided, shows its subject proceeding very slowly to help the subject of the first line, who is straitened by the carriage adorned with metal in front of him. There will be occasion for regret, but the end will be good. Slow help does eventually come; the end is good despite the difficulty.",
+    "The fifth line, undivided, shows its subject with his nose and feet cut off. He is straitened by his ministers in their scarlet aprons. He is leisurely in his movements, however, and is satisfied. It will be advantageous for him to be as sincere as in sacrificing. Oppressed even by those who should serve him; the equanimity and sincerity of the great man prevail.",
+    "The sixth line, divided, shows its subject straitened, as if bound with creepers; or in a high and dangerous position, and saying to himself, 'If I move, I shall repent it.' If he does repent of former errors, there will be good fortune in his going forward. The final oppression by entanglement; regret for past errors and forward movement bring release."
+  ],
+  48: [
+    "The first line, divided, shows a well so muddy that men will not drink from it; or an old well to which neither birds nor other creatures resort. It is of no use to anyone; the condition is of long-standing neglect.",
+    "The second line, undivided, shows a well from which by a leaky basket the water escapes and flows away to the shrimps and such small creatures among the grass, or one the rope of which has become old and leaky. Potential that goes to waste; the means of drawing up the good water is faulty.",
+    "The third line, undivided, shows a well, which has been cleared out, but is not used. Our hearts are sorry for this, for the water might be drawn. If the king were only intelligent, both he and his subjects might receive the benefit of it. Good water available but unused because of lack of discernment above.",
+    "The fourth line, divided, shows a well, the lining of which is being laid. There will be no mistake. The well being prepared and restored to usefulness; though not yet drawn from, the preparation is right.",
+    "The fifth line, undivided, shows a clear, limpid well, whose waters are drunk from the cold spring. The perfectly functioning well; pure water freely available and drawn.",
+    "The sixth line, divided, shows a well which is being freely used. It is not covered, and there is complete sincerity that its waters are sure to be drawn. There will be great good fortune. The well at full service — uncovered, freely flowing, completely reliable."
+  ],
+  49: [
+    "The first line, undivided, shows its subject as if he were bound with the skin of a yellow ox. The subject should not yet act; wrapped in the most yielding and firm restraint, the time for revolution has not arrived.",
+    "The second line, divided, shows its subject making his changes after some time has passed. Action undertaken is fortunate. Advance will be without error. When one's own day has come, the subject may proceed; the timing is right.",
+    "The third line, undivided, shows that advance will lead to evil. Though he be firm and correct, his position is perilous. When the talk about a revolutionary change has gone round three times, he may commit himself to it, and he will be believed. Three rounds of deliberation must precede commitment to revolution.",
+    "The fourth line, undivided, shows occasion for repentance disappearing from its subject. Let him be believed in. The remodeling of the state system will be fortunate. After proper deliberation, the actual change is made and men believe in it.",
+    "The fifth line, undivided, shows the great man producing his changes as a tiger changes his stripes. Before he divines, he is believed in. The great man's revolution is visible in his nature; he is trusted before he speaks.",
+    "The sixth line, divided, shows the superior man producing his changes as a panther changes his spots, while inferior men change their faces and show their obedience. To advance now would lead to evil. But if he abide correct and firm, there will be good fortune. The superior man's thorough but quieter change; the inferior man's superficial compliance."
+  ],
+  50: [
+    "The first line, divided, shows a ting with legs upturned, and the advantage of removing what was bad. We get a concubine for the sake of her children. There will be no mistake. Overturning the vessel to clean it out; a secondary means producing the primary result.",
+    "The second line, undivided, shows a ting with the things to be cooked in it. If its subject can say, 'My enemy dislikes me, but he cannot approach me,' there will be good fortune. The cauldron full; the enemy's dislike is powerless against genuine goodness.",
+    "The third line, undivided, shows a ting with its ears removed, so that movement is impeded. The fat flesh of the pheasant contained in it will not be eaten. On every side rain falls, reducing the ground for repentance. There will be good fortune in the end. Blocked from use; the good that is within cannot reach those who need it — temporarily.",
+    "The fourth line, undivided, shows a ting with its feet broken; the prince's food is overturned and his person is soiled. There will be evil. The failure of the vessel in its essential function; the food for the ruler is spilled — this is serious failure.",
+    "The fifth line, divided, shows a ting with yellow ears and rings of metal in them. There will be advantage through firm correctness. The cauldron properly equipped with central virtue — yellow for the middle, metal for firmness.",
+    "The sixth line, undivided, shows a ting with rings of jade. There will be great good fortune, and all action taken will be in every way advantageous. The highest completion of the vessel with jade — the most precious handles, signifying perfect virtue."
+  ],
+  51: [
+    "The first line, undivided, shows the shock of the movement of thunder, which is presently followed by a smiling gladness. Good fortune. The first shock of the thunder; first fear, then laughter — good fortune.",
+    "The second line, divided, shows the shock of the movement coming in great peril. He thinks he loses his treasures, and mounts the nine hills; but he need not go in pursuit of them. In seven days he will find them. The shock brings danger and apparent loss; but what was lost will be recovered.",
+    "The third line, divided, shows its subject distraught amid the startling movements of the time. If those movements excite him to right action, there will be no mistake. The thunder that drives one to action; if the response is right, no error.",
+    "The fourth line, undivided, shows the subject of it, amid the startling movements, falling into the mud. The shock that overwhelms one completely; sinking into the mud.",
+    "The fifth line, divided, shows its subject going and coming amid the startling movements, and always in peril; but perhaps he will not lose anything, and will find business to engage his attention. Continuous danger from the shocks; but what is essential is preserved.",
+    "The sixth line, divided, shows its subject, amid the startling movements, in breathless terror and looking around him with trembling apprehension. If he take action, there will be evil. If while the startling movements have not reached his own person and his neighbourhood he were to take action, though he will incur blame, there will be no mistake. When the shock is near and overwhelming, action is wrong; when it is still distant, blame may be incurred but no error."
+  ],
+  52: [
+    "The first line, divided, shows its subject keeping his toes still. There will be no mistake; but it will be advantageous for him to be persistently firm and correct. Stillness at the very extremities; correct and persistent stillness brings good fortune.",
+    "The second line, divided, shows its subject keeping the calves of his legs still. He cannot help the subject of the line he follows, and is dissatisfied in his mind. The stillness required is of the muscles of action; the inability to help brings unhappiness but is correct.",
+    "The third line, undivided, shows its subject keeping his loins still, and separating the shell of the back. The position is perilous, and the heart glows with suppressed excitement. Forced stillness in the powerful middle of the body; the heart is agitated beneath the outward stillness.",
+    "The fourth line, divided, shows its subject keeping his trunk still. There will be no mistake. Stillness in the upper body; peaceful and without error.",
+    "The fifth line, divided, shows its subject keeping his jawbones still, so that his words are all orderly. Occasion for repentance will disappear. Keeping still even in speech; orderly words end all occasion for regret.",
+    "The sixth line, undivided, shows its subject devotedly maintaining his restfulness. There will be good fortune. The highest and most complete stillness — wholehearted, pervasive, devout; great good fortune."
+  ],
+  53: [
+    "The first line, divided, shows a crane moving towards the shore. Its young son is in peril. There will be occasion for blame. The very beginning of gradual advance; the immature position is dangerous.",
+    "The second line, divided, shows the geese gradually approaching the large rocks. There they eat and drink joyfully and at ease. There will be good fortune. Gradual advance to a safe, stable resting place; nourishment and ease, good fortune.",
+    "The third line, undivided, shows the geese gradually advancing to the dry plains. A husband goes on an expedition from which he does not return; a wife becomes pregnant, but will not nourish her child. There will be evil. It will be advantageous to guard against such robbers. Departure at the wrong time and place; the improper advance leads to loss.",
+    "The fourth line, divided, shows the geese gradually advancing to the trees. They may light on the flat branches, and there will be no mistake. The goose finding even in trees a temporary resting place; adaptability in the advance, no error.",
+    "The fifth line, undivided, shows the geese gradually advancing to the high mound. For three years the wife does not become pregnant; but in the end the natural issue cannot be prevented. There will be good fortune. Long delay in the expected result; but the right outcome finally comes.",
+    "The sixth line, undivided, shows the geese gradually advancing to the large heights beyond. Their feathers can be used as ornaments. There will be good fortune. The highest gradual advance — so perfect it ornaments everything around it."
+  ],
+  54: [
+    "The first line, divided, shows a younger sister married off in a secondary position, as a concubine. A lame man who is able to walk. Advance of such a one will be fortunate. The subordinate position taken willingly; limited but what is possible.",
+    "The second line, undivided, shows one-eyed man who is able to see. The advantage of maintaining the firm correctness of a solitary widow. The limited view of one eye; restricted but still seeing. Correct persistence is right.",
+    "The third line, divided, shows a younger sister who was to be married off but now waits as a concubine in a secondary position. This is no error, and she will get her husband. The hope deferred that is eventually fulfilled; the lower position accepted leads to the proper union.",
+    "The fourth line, undivided, shows a younger sister who is to be married off, but has passed the time for it. She waits late, but the time will come. The marriage delayed but not denied; waiting in correctness for the right time.",
+    "The fifth line, divided, reminds us of the marrying of a younger sister when Tî-yî gave in marriage his own younger sister; and here the sleeves of the princess were not equal to those of the ladies who accompanied her as attendants. The proper conduct of the secondary — not outshining the primary; true virtue is humble.",
+    "The sixth line, divided, shows the young lady holding the basket, but without anything in it, and the gentleman slaughtering the sheep, but without blood flowing from it. There is no advantage in any direction. The form without the substance — the offerings without real content; nothing is accomplished."
+  ],
+  55: [
+    "The first line, undivided, shows its subject meeting with his correlate who is as fortunate as himself. Though they are both of the same character there will be no mistake. Going forward with the qualities thus shown will lead to being esteemed. The fortunate meeting of the like; no mistake, and esteem follows.",
+    "The second line, divided, shows its subject surrounded by screens so large and thick that at mid-day he can see from them the constellation of the Bushel. If he go to apply the rules of his conduct to those masters, he will bring suspicion and hate upon himself. Let his confidence in them be such as to lead to action, and good fortune will ensue. The darkness at the heart of fullness; acting with sincerity overcomes the obstruction.",
+    "The third line, undivided, shows its subject with an additional screen of a large and thick banner, through which at midday he cannot see the small star of the Milky Way. In the darkness he breaks his right arm; but there will be no mistake. The densest obscuration at the height of fullness; injury but no error.",
+    "The fourth line, undivided, shows its subject with screens so large and thick that at midday he can see from them the constellation of the Bushel. But he meets with the subject of the first line, who is of the same character with himself. There will be good fortune. The dark period begins to break; meeting with the like brings good fortune.",
+    "The fifth line, divided, shows its subject bringing around him the men of brilliant ability. There will be occasion for congratulation and praise. Good fortune. The ruler who gathers about him those of real ability; celebration is in order.",
+    "The sixth line, divided, shows its subject with his house made large, but only serving as a screen to his household. When he looks at his door, it is still, and there is nobody about it. For three years no one is to be seen. There will be evil. The man who has made everything large externally but empty within; isolation is the result."
+  ],
+  56: [
+    "The first line, divided, shows the wanderer, mean and meanly occupied. It is thus that he brings on himself further calamity. The wanderer demeaning himself in trivial affairs; attracting further misfortune by his petty conduct.",
+    "The second line, divided, shows the wanderer, occupying his lodging-house, carrying with him his means of livelihood, and provided with good and trusty servants. The wanderer with modest but adequate resources; reliable attendants make the wandering secure.",
+    "The third line, undivided, shows the wanderer, burning his lodging-house, and having lost his servants. However firm and correct he try to be, he will be in peril. The wanderer who has destroyed his own shelter and alienated his helpers; danger even with correctness.",
+    "The fourth line, undivided, shows the wanderer in a resting-place, having also the means of livelihood and the axe, but still saying, 'I am not at ease in my mind.' A position of some security but not settled; the unease is appropriate.",
+    "The fifth line, divided, shows its subject shooting a pheasant. It takes one arrow to bring it down, and he will be praised and employed. The wanderer in the right position, acting decisively; praised and given a role.",
+    "The sixth line, undivided, shows the bird with its nest burned, and the wanderer, first laughing, and then crying out and weeping. He has lost his ox-like docility too readily. There will be evil. The wanderer who has lost everything through his own arrogance; the loss of his fundamental virtue brings final disaster."
+  ],
+  57: [
+    "The first line, divided, shows its subject, in his advance and retreat, advantaged by the firm correctness of a brave soldier. The beginning of penetration; the vacillating movement corrected by firm purpose.",
+    "The second line, undivided, shows the representative of penetration under a couch, and employing diviners and exorcists in a way bordering on confusion. There will be good fortune and no mistake. Penetrating beneath the surface; the seemingly confused search for what is hidden discovers it.",
+    "The third line, undivided, shows its subject penetrating only by violent and repeated efforts. There will be occasion for regret. Forcing penetration by repeated violence; the result is regret.",
+    "The fourth line, divided, shows occasion for repentance disappearing from its subject. In his hunting, he catches three kinds of game. Gentle penetration in the right place; success without regret, and the three kinds of game are taken.",
+    "The fifth line, undivided, shows that with firm correctness there will be good fortune. All occasion for repentance will disappear; all movements will be advantageous. Nothing that is not of advantage. Before the beginning there may be no good issue; after it, there will be. Before the new order, confusion; after the right beginning, all succeeds.",
+    "The sixth line, divided, shows the representative of penetration under a couch, and having lost the axe with which he works. However firm and correct he try to be, there will be evil. The penetration that has lost its instrument; without the means to act, even correctness cannot save."
+  ],
+  58: [
+    "The first line, undivided, shows the harmony and satisfaction of a mind content with itself. There will be good fortune. Inner satisfaction complete in itself; relying on nothing outside.",
+    "The second line, undivided, shows the joyous satisfaction of one who is sincere and truthful. There will be good fortune, and the occasion for repentance will disappear. Joyous sincerity that comes from within; good fortune.",
+    "The third line, divided, shows its subject bringing round himself whatever can give pleasure. There will be evil. When the joy is sought by bringing around oneself what pleases, it comes from outside and not from within; this is harmful.",
+    "The fourth line, undivided, shows its subject deliberating about what to seek his pleasure in, and not yet at rest. He borders on what would give him pleasure, and there will be cause for joy. Weighing carefully what to delight in; not yet settled, but approaching the genuine.",
+    "The fifth line, undivided, shows its subject trusting in one who would injure him. The situation is perilous. Sincerity placed in an unworthy object; this brings danger.",
+    "The sixth line, divided, shows the pleasure of its subject in leading and attracting others. The pleasure that expresses itself in drawing others along; this is the final expression of joy's influence."
+  ],
+  59: [
+    "The first line, divided, shows a horse vigorously employed to disperse the others. Good fortune. The vigorous action that breaks up the obstruction at the very start; acting energetically to disperse.",
+    "The second line, undivided, shows its subject, amid the dispersion, hurrying to his refuge. Occasion for repentance will disappear. When dispersion threatens, hurrying to one's proper place of support; regret disappears.",
+    "The third line, divided, shows its subject getting rid of any accumulation in his own person. There will be no occasion for repentance. Dispersing what has accumulated in oneself — selfless action that gives everything; no regret.",
+    "The fourth line, divided, shows its subject scattering the party to which he belongs, and there will be great good fortune. Dispersing a clique brings great good fortune; through this dispersion, the right gathering occurs.",
+    "The fifth line, undivided, shows its subject amidst the dispersion issuing his great announcements as the perspiration flows from his body. He scatters abroad the accumulations in the royal granaries. There will be no mistake. The great ruler dispersing his resources in the time of dissolution; generous distribution prevents disaster.",
+    "The sixth line, undivided, shows its subject disposing of what may be called the bloody wounds, and going and separating himself from its multitude. There will be no mistake. The final dispersal of what is harmful; separating from those who bring injury."
+  ],
+  60: [
+    "The first line, undivided, shows its subject not quitting the courtyard outside his door. There will be no mistake. Remaining within the proper bounds at the outset; not going beyond one's sphere.",
+    "The second line, undivided, shows its subject not quitting the courtyard inside his gate. There will be evil. The second position requires action, not continued restraint; failure to act when action is due brings evil.",
+    "The third line, divided, shows its subject with no appearance of the regulation and restraint, in which case there will be occasion for lamentation. But there will be no mistake. Without self-imposed limitation, lament follows; but the fault is self-generated, not external.",
+    "The fourth line, divided, shows its subject quietly and naturally attentive to all regulations. There will be progress and success. The natural ease of one who has internalized the right limits; advance and success.",
+    "The fifth line, undivided, shows its subject sweetly and acceptably enacting his regulations. There will be good fortune. His going forward will afford ground for admiration. The ruler whose regulations are so right they are welcomed; going forward to admiration.",
+    "The sixth line, divided, shows its subject enacting regulations severe and difficult. Even with firm correctness there will be evil. But though there be cause for repentance, it will by and by disappear. Excessive limitation that harms people; even correctness cannot save it from evil, though the regret eventually passes."
+  ],
+  61: [
+    "The first line, undivided, shows its subject resting in himself. There will be good fortune. If there be any occasion for suspicion at all, it disappears. The inner truth rooted in one's own centre; groundless suspicion vanishes.",
+    "The second line, undivided, shows its subject shouting to the crane which is in a retired place, and its young ones answering it. Were it said, 'We have a cup of good spirits,' the corresponding response would be, 'We will partake of it with you.' Like calls to like at a distance; genuine inner truth resonates with its own kind.",
+    "The third line, divided, shows its subject having met with his mate. Now he beats his drum, and now he leaves off. Now he weeps, and now he sings. The man whose inner truth is dependent on another; alternating joy and sorrow with the relationship's changes.",
+    "The fourth line, divided, shows its subject mounted on the horse which belongs to it, and whose thoughts are directed to a different horse. He vanishes from the position in which he was. There will be no mistake. Leaving behind inferior attachments for the superior; the right advance.",
+    "The fifth line, undivided, shows its subject perfectly sincere, and holding everything together. There will be no mistake. The central, correct, sincerely binding force that holds all together.",
+    "The sixth line, undivided, shows its subject crowing like a cock, and still trying to mount. Even with firm correctness there will be evil. The inner truth that expresses itself only in words and claims; not yet realized in substance."
+  ],
+  62: [
+    "The first line, divided, shows a bird flying, and ascending from it, there will be evil. The bird that cannot afford to fly but does so anyway; the small that tries to exceed its capacity comes to grief.",
+    "The second line, divided, shows its subject passing by the grandfather, and meeting with the grandmother; not attempting anything against the ruler, but meeting with the minister. There will be no mistake. The small excess that bypasses the great and finds its proper level.",
+    "The third line, undivided, shows its subject, taking no extraordinary precautions, meeting the evil, and some one killing him. There will be evil. The man in the position of strength who takes no special care; someone comes and kills him.",
+    "The fourth line, undivided, shows its subject falling into no mistake, but meeting the exigency of his situation, going on in which will be attended with risk. Let him be as the flying bird, which leaves its musical note behind it; for to ascend is not so proper for it as to descend. The strong man who avoids error by caution; like the bird whose song descends rather than rises.",
+    "The fifth line, divided, shows dense clouds, but no rain falling on our borders in the west. The duke shoots and takes a bird in a cave. Dense clouds without rain; the small excess of yin at the top; the duke's action is appropriate.",
+    "The sixth line, divided, shows its subject not meeting the exigency of his situation, and exceeding his proper course. It becomes like a flying bird that is carried far away from it. There will be evil; the case is what is called one of calamity and self-caused injury. The final excess that goes too far and cannot return; self-caused disaster."
+  ],
+  63: [
+    "The first line, undivided, shows its subject drawing back his wheel and wetting his tail. There will be no mistake. The caution of the beginning; pulling back the wheel, not rushing into the crossing.",
+    "The second line, divided, shows a wife who has lost her carriage-screen. There is no occasion to go in pursuit of it. In seven days she will find it. The temporary loss of something important; it will return of itself.",
+    "The third line, undivided, reminds us that the high ancestor attacked the Demon Territory, and conquered it after three years. Inferior men should not be employed in such enterprises. The great achievement that requires three years; only the right men should undertake it.",
+    "The fourth line, divided, shows its subject with rags provided against any leak, and being on his guard all day long. The precaution against leakage and damage; constant vigilance is right even after completion.",
+    "The fifth line, undivided, shows its subject, the neighbor in the east who has killed an ox, in comparison with the neighbor in the west whose spring sacrifice, though small, is more acceptable. Sincerity is better than lavish ceremony; the small genuine offering exceeds the great ostentatious one.",
+    "The sixth line, divided, shows its subject with his head immersed in the water. There will be evil. The opposite of caution at the completion; plunging forward when restraint is needed — the very end reversed into a beginning of danger."
+  ],
+  64: [
+    "The first line, divided, shows its subject getting his tail in the water. There will be occasion for regret. The first step of the as-yet-incomplete crossing; getting the tail wet — hasty and premature.",
+    "The second line, undivided, shows its subject dragging back his wheel. With firm correctness there will be good fortune. Pulling back the wheel rather than rushing forward; the correct restraint brings good fortune.",
+    "The third line, divided, shows that its subject has not yet effected the necessary advance. To advance will lead to evil, but it will be advantageous to cross the great stream. The force is not yet sufficient to complete the crossing; advance is wrong but the crossing itself is the goal.",
+    "The fourth line, undivided, shows its subject with firm correctness, action will be followed by good fortune. Regret will disappear. Let him stir himself up, as if he were invading the Ghost territory; with three years' preparations, he will be rewarded with dominion over the great kingdom. Sustained, strenuous effort over time; the reward is commensurate with the preparation.",
+    "The fifth line, divided, shows its subject with firm correctness, and no occasion for repentance. We see in it the brightness of a superior man, and the possession of sincerity. There will be good fortune. The central and correct virtue of the superior man, with genuine sincerity; good fortune.",
+    "The sixth line, undivided, shows its subject with full confidence, drinking in harmony; but as we look at it, the head is immersed in the water. The confidence of one who has not completed the crossing drinking as if everything were done; plunging the head under — the danger of premature celebration."
+  ]
+};
+
+
 const HEX_LOOKUP = {
   "111111":1,"000000":2,"010001":3,"100010":4,"010111":5,"111010":6,
   "000010":7,"010000":8,"110111":9,"111011":10,"000111":11,"111000":12,
@@ -4190,32 +4708,46 @@ function showReading(question, lines) {
   // Primary interpretation
   interpHtml += renderHexInterpretation(primary, '0.7s', false);
   
-  // Moving lines — build skeleton immediately, then fill via API
+  // Moving lines — render embedded commentary immediately (no API call)
   if (hasMoving) {
     interpHtml += `<div class="moving-lines-section reveal" style="transition-delay:0.9s">
       <div class="moving-lines-title">Moving Lines · The Lines That Change</div>`;
-    
+
     movingLines.forEach(ml => {
       const line = primary.lines[ml.index];
       const lineText = (typeof line === 'object') ? line.text : line;
       const typeLabel = ml.value === 9 ? 'Old Yang · Nine' : 'Old Yin · Six';
       const typeCls = ml.value === 9 ? 'old-yang' : 'old-yin';
-      // Each line gets a unique id so we can fill it in after API responds
-      const entryId = `ml-entry-${primary.number}-${ml.lineNum}`;
       const isLast = ml === movingLines[movingLines.length - 1];
-      interpHtml += `<div class="moving-line-entry" id="${entryId}">
+
+      const wilhelm = (typeof line === 'object' && line.wilhelm) ? line.wilhelm
+                    : (typeof line === 'object' && line.commentary) ? line.commentary : '';
+      const legge   = (LEGGE_LINES[primary.number] && LEGGE_LINES[primary.number][ml.index])
+                    ? LEGGE_LINES[primary.number][ml.index]
+                    : (typeof line === 'object' && line.legge) ? line.legge : '';
+
+      let commentaryHtml = '';
+      if (wilhelm && legge) {
+        commentaryHtml = `<span class="wilhelm-label">ClaudeAI · Commentary Derived from Wilhelm</span>
+          <div class="wilhelm-commentary">${wilhelm}</div>
+          <span class="legge-label">Legge</span>
+          <div class="legge-commentary">${legge}</div>`;
+      } else if (wilhelm) {
+        commentaryHtml = `<span class="wilhelm-label">ClaudeAI · Commentary Derived from Wilhelm</span>
+          <div class="wilhelm-commentary">${wilhelm}</div>`;
+      }
+
+      interpHtml += `<div class="moving-line-entry">
         <div class="moving-line-pos">
           Line ${ml.lineNum} (${getOrdinal(ml.lineNum)} Position)
           <span class="moving-line-type ${typeCls}">${typeLabel}</span>
         </div>
         <div class="moving-line-text">"${lineText}"</div>
-        <div class="api-commentary-loading">
-          <span class="loading-oracle">&#9670; Consulting the commentaries&hellip;</span>
-        </div>
+        ${commentaryHtml}
       </div>
       ${!isLast ? '<hr class="moving-line-separator">' : ''}`;
     });
-    
+
     interpHtml += `</div>`;
   }
   
@@ -4248,96 +4780,6 @@ function showReading(question, lines) {
     });
   }, 100);
 
-  // Now fetch Wilhelm + Legge commentary for each moving line via API
-  if (hasMoving) {
-    movingLines.forEach(ml => {
-      const line = primary.lines[ml.index];
-      const lineText = (typeof line === 'object') ? line.text : line;
-      const entryId = `ml-entry-${primary.number}-${ml.lineNum}`;
-      fetchLineCommentary(primary, ml.lineNum, lineText, entryId);
-    });
-  }
-}
-
-async function fetchLineCommentary(hex, lineNum, lineText, entryId) {
-  const ordinals = ['First','Second','Third','Fourth','Fifth','Sixth','Seventh'];
-  const ordinal = ordinals[lineNum - 1] || lineNum;
-  
-  const prompt = `You are a scholarly commentator on the I Ching. For the moving line described below, provide TWO separate commentaries:
-
-1. WILHELM: Write 3-5 sentences of interpretive commentary in the spirit of Richard Wilhelm's translation — psychologically rich, philosophically grounded, drawing on the line's imagery and its place in the hexagram's larger teaching. This should be your own original prose in Wilhelm's interpretive tradition, not a quote.
-
-2. LEGGE: Provide James Legge's actual commentary on this line from his 1882 translation "The I Ching" (Sacred Books of the East, Vol. XVI). Quote Legge's own words as accurately as possible. Legge's commentaries are typically 1-3 sentences and tend to be literal and philological. Begin with "Legge says:" followed by his text.
-
-Hexagram ${hex.number}: ${hex.english} (${hex.chinese}, ${hex.pinyin})
-Line ${lineNum} (${ordinal} position): "${lineText}"
-
-Respond in this exact JSON format with no other text:
-{"wilhelm": "your Wilhelm-spirit commentary here", "legge": "Legge says: his actual words here"}`;
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-    
-    const data = await response.json();
-    const text = data.content && data.content[0] && data.content[0].text ? data.content[0].text : '';
-    
-    let wilhelm = '', legge = '';
-    try {
-      const clean = text.replace(/```json|```/g, '').trim();
-      const parsed = JSON.parse(clean);
-      wilhelm = parsed.wilhelm || '';
-      legge = parsed.legge || '';
-    } catch(e) {
-      // Fallback: try to extract from text
-      const wMatch = text.match(/"wilhelm"\s*:\s*"([^"]+)"/);
-      const lMatch = text.match(/"legge"\s*:\s*"([^"]+)"/);
-      wilhelm = wMatch ? wMatch[1] : '';
-      legge = lMatch ? lMatch[1] : '';
-    }
-    
-    const entry = document.getElementById(entryId);
-    if (entry) {
-      const loadingEl = entry.querySelector('.api-commentary-loading');
-      if (loadingEl) {
-        if (wilhelm && legge) {
-          loadingEl.innerHTML = `<span class="wilhelm-label">ClaudeAI · Commentary Derived from Wilhelm</span>
-            <div class="wilhelm-commentary">${wilhelm}</div>
-            <span class="legge-label">Legge</span>
-            <div class="legge-commentary">${legge}</div>`;
-        } else if (wilhelm) {
-          loadingEl.innerHTML = `<span class="wilhelm-label">Wilhelm</span>
-            <div class="wilhelm-commentary">${wilhelm}</div>`;
-        } else {
-          loadingEl.innerHTML = `<span class="line-commentary-source-label">Commentary</span>
-            <div class="interp-text line-commentary">${text}</div>`;
-        }
-      }
-    }
-  } catch(err) {
-    const entry = document.getElementById(entryId);
-    if (entry) {
-      const loadingEl = entry.querySelector('.api-commentary-loading');
-      if (loadingEl) {
-        // Fall back to existing commentary if available
-        const line = hex.lines[lineNum - 1];
-        const fallback = (typeof line === 'object' && line.commentary) ? line.commentary : '';
-        if (fallback) {
-          loadingEl.innerHTML = `<span class="line-commentary-source-label">Commentary</span>
-            <div class="interp-text line-commentary">${fallback}</div>`;
-        } else {
-          loadingEl.innerHTML = '';
-        }
-      }
-    }
-  }
 }
 
 function renderHexInterpretation(hex, delay, isResult) {

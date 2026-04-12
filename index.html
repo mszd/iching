@@ -861,7 +861,7 @@ header {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(26,18,8,0.4);
+  color: rgba(26,18,8,0.65);
   text-align: center;
   margin-top: 32px;
   padding-top: 24px;
@@ -893,6 +893,15 @@ footer {
   color: rgba(26,18,8,0.3);
   font-style: italic;
   padding-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+footer p {
+  margin: 0 0 10px 0;
+  line-height: 1.7;
+}
+footer p:last-child {
+  margin-bottom: 0;
 }
 
 /* Scroll reveal */
@@ -955,12 +964,9 @@ footer {
     <button class="email-btn" id="emailBtn" onclick="openEmailModal()" style="display:none;">Save This Reading</button>
 
     <footer>
-      Interpretations drawn from <em>The I Ching or Book of Changes</em>, translated by Richard Wilhelm,<br>
-      rendered into English by Cary F. Baynes · Bollingen Series XIX · Princeton University Press<br>
-      Line commentaries further informed by James Legge, <em>The I Ching</em>,<br>
-      Sacred Books of the East, Vol. XVI · Oxford, 1882<br><br>
-      Lines are cast by the traditional yarrow-stalk method: 49 stalks divided,<br>
-      the remainder counted to yield old and young yang and yin.
+      <p>Interpretations drawn from <em>The I Ching or Book of Changes</em>, translated by Richard Wilhelm, rendered into English by Cary F. Baynes &middot; Bollingen Series XIX &middot; Princeton University Press</p>
+      <p>Line commentaries further informed by James Legge, <em>The I Ching</em>, Sacred Books of the East, Vol. XVI &middot; Oxford, 1882</p>
+      <p>Lines are cast by the traditional yarrow-stalk method: 49 stalks divided, the remainder counted to yield old and young yang and yin.</p>
     </footer>
   </div>
 </div>
@@ -978,7 +984,7 @@ footer {
       <p>Confucius is said to have relied on the I Ching. He stated that, in his experience, it had only been wrong once. Subsequent scholars have pointed out that Confucius was blinded by personal issues in his single judgment of the Oracle&rsquo;s failure, and that it was actually correct in that event as in all others. The Oracle requires interpretation, but many have felt that its advice is helpful and worth consideration. For the Wise Man, Perseverance brings good fortune.</p>
       <p>If you find errors or anomalies, please let me know and I will correct them.</p>
     </div>
-    <div class="instructions-modal-sig">Michael &nbsp;&middot;&nbsp; ClaudeAI &nbsp;&middot;&nbsp; Claude Code</div>
+    <div class="instructions-modal-sig" style="word-break:keep-all;">Michael &nbsp;&middot;&nbsp; ClaudeAI &nbsp;&middot;&nbsp; Claude&nbsp;Code</div>
   </div>
 </div>
 

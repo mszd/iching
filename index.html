@@ -3,17 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A complete I Ching Oracle using the Wilhelm/Baynes and Legge translations, with authentic yarrow-stalk probability casting, moving lines, and additional commentary.">
+<meta name="theme-color" content="#f5edd6">
+<meta name="apple-mobile-web-app-title" content="I Ching Oracle">
 <title>I Ching Oracle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Noto+Serif+SC:wght@300;400;700&family=Cinzel:wght@400;600&display=swap">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Noto+Serif+SC:wght@300;400;700&family=Cinzel:wght@400;600&display=swap');
 
 :root {
   --ink: #1a1208;
   --paper: #f5edd6;
   --aged: #e8d5a3;
   --vermillion: #c0392b;
-  --gold: #b8860b;
-  --gold-light: #d4a017;
+  --gold: #866210;
+  --gold-light: #9a7415;
   --shadow: rgba(26,18,8,0.3);
   --faint: rgba(26,18,8,0.06);
 }
@@ -98,7 +103,7 @@ header {
 .subtitle {
   font-style: italic;
   font-size: 0.95rem;
-  color: rgba(26,18,8,0.55);
+  color: rgba(26,18,8,0.72);
   letter-spacing: 0.05em;
 }
 
@@ -116,7 +121,7 @@ header {
 /* === QUESTION SECTION === */
 .question-section {
   background: rgba(255,255,255,0.35);
-  border: 1px solid rgba(184,134,11,0.3);
+  border: 1px solid rgba(134,98,16,0.3);
   border-radius: 2px;
   padding: 36px 40px;
   margin-bottom: 40px;
@@ -151,7 +156,7 @@ header {
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(184,134,11,0.4);
+  border-bottom: 1px solid rgba(134,98,16,0.4);
   padding: 10px 4px;
   font-family: 'IM Fell English', Georgia, serif;
   font-size: 1.15rem;
@@ -162,7 +167,7 @@ header {
   resize: none;
 }
 
-.question-input::placeholder { color: rgba(26,18,8,0.3); font-style: italic; }
+.question-input::placeholder { color: rgba(26,18,8,0.55); font-style: italic; }
 .question-input:focus { border-bottom-color: var(--vermillion); }
 
 .oracle-btn {
@@ -270,8 +275,8 @@ header {
   text-align: center;
   margin-bottom: 50px;
   padding: 20px;
-  border-top: 1px solid rgba(184,134,11,0.25);
-  border-bottom: 1px solid rgba(184,134,11,0.25);
+  border-top: 1px solid rgba(134,98,16,0.25);
+  border-bottom: 1px solid rgba(134,98,16,0.25);
 }
 
 .question-display .label {
@@ -336,7 +341,7 @@ header {
 .hex-pinyin {
   font-style: italic;
   font-size: 0.9rem;
-  color: rgba(26,18,8,0.5);
+  color: rgba(26,18,8,0.62);
   letter-spacing: 0.1em;
 }
 
@@ -365,7 +370,7 @@ header {
 
 .line-number {
   font-size: 0.65rem;
-  color: rgba(26,18,8,0.35);
+  color: rgba(26,18,8,0.55);
   width: 14px;
   text-align: right;
   font-family: 'Cinzel', serif;
@@ -483,8 +488,8 @@ header {
   color: var(--ink);
   padding: 16px 20px;
   background: rgba(255,255,255,0.4);
-  border-top: 1px solid rgba(184,134,11,0.2);
-  border-bottom: 1px solid rgba(184,134,11,0.2);
+  border-top: 1px solid rgba(134,98,16,0.2);
+  border-bottom: 1px solid rgba(134,98,16,0.2);
   margin: 12px 0;
 }
 
@@ -492,7 +497,7 @@ header {
   font-size: 0.93rem;
   line-height: 1.82;
   color: rgba(26,18,8,0.7);
-  border-left: 2px solid rgba(184,134,11,0.25);
+  border-left: 2px solid rgba(134,98,16,0.25);
   padding-left: 14px;
   margin: 10px 0 18px 0;
   font-style: italic;
@@ -568,7 +573,7 @@ header {
 
 .moving-line-separator {
   border: none;
-  border-top: 1px solid rgba(184,134,11,0.18);
+  border-top: 1px solid rgba(134,98,16,0.18);
   margin: 18px 0;
 }
 
@@ -622,7 +627,7 @@ header {
 .moving-line-entry {
   margin-bottom: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid rgba(184,134,11,0.15);
+  border-bottom: 1px solid rgba(134,98,16,0.15);
 }
 .moving-line-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
@@ -656,7 +661,7 @@ header {
 .section-sep {
   text-align: center;
   margin: 50px 0;
-  color: rgba(184,134,11,0.4);
+  color: rgba(134,98,16,0.4);
   font-size: 1.4rem;
   letter-spacing: 0.5em;
 }
@@ -667,7 +672,7 @@ header {
   justify-content: space-between;
   margin: 10px 0;
   font-size: 0.8rem;
-  color: rgba(26,18,8,0.45);
+  color: rgba(26,18,8,0.62);
   font-style: italic;
 }
 
@@ -725,7 +730,7 @@ header {
 }
 .email-modal {
   background: var(--paper);
-  border: 1px solid rgba(184,134,11,0.3);
+  border: 1px solid rgba(134,98,16,0.3);
   padding: 40px;
   max-width: 440px;
   width: 90%;
@@ -751,7 +756,7 @@ header {
   width: 100%;
   box-sizing: border-box;
   padding: 10px 14px;
-  border: 1px solid rgba(184,134,11,0.3);
+  border: 1px solid rgba(134,98,16,0.3);
   background: rgba(255,255,255,0.6);
   font-family: 'IM Fell English', serif;
   font-size: 0.95rem;
@@ -798,7 +803,7 @@ header {
   padding: 6px 24px;
   background: transparent;
   color: var(--gold);
-  border: 1px solid rgba(184,134,11,0.35);
+  border: 1px solid rgba(134,98,16,0.35);
   font-family: 'Cinzel', serif;
   font-size: 0.62rem;
   letter-spacing: 0.4em;
@@ -807,7 +812,7 @@ header {
   transition: all 0.3s;
 }
 .instructions-btn:hover {
-  background: rgba(184,134,11,0.08);
+  background: rgba(134,98,16,0.08);
 }
 
 /* Instructions modal */
@@ -826,7 +831,7 @@ header {
 }
 .instructions-modal {
   background: var(--paper);
-  border: 1px solid rgba(184,134,11,0.25);
+  border: 1px solid rgba(134,98,16,0.25);
   padding: 48px 44px;
   max-width: 600px;
   width: 100%;
@@ -865,7 +870,7 @@ header {
   text-align: center;
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid rgba(184,134,11,0.15);
+  border-top: 1px solid rgba(134,98,16,0.15);
 }
 .instructions-close {
   position: absolute;
@@ -890,7 +895,7 @@ footer {
   margin-top: 80px;
   text-align: center;
   font-size: 0.78rem;
-  color: rgba(26,18,8,0.3);
+  color: rgba(26,18,8,0.62);
   font-style: italic;
   padding-bottom: 40px;
   padding-left: 16px;
@@ -917,10 +922,11 @@ footer p:last-child {
 </style>
 </head>
 <body>
+<main>
 <div class="container">
 
   <header>
-    <div class="trigram-row">☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷</div>
+    <div class="trigram-row" aria-hidden="true">☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷</div>
     <div class="chinese-title">易經</div>
     <div class="english-title">I Ching · Book of Changes</div>
     <div class="divider">
@@ -937,14 +943,14 @@ footer p:last-child {
   <div class="question-section" id="questionSection">
     <div class="question-label">Compose your question for the Oracle</div>
     <textarea class="question-input" id="questionInput" rows="2"
-      placeholder="What would you know of the Way ahead…"></textarea>
+      placeholder="What would you know of the Way ahead…" aria-label="Enter your question for the Oracle"></textarea>
     <button class="oracle-btn" id="castBtn" onclick="beginCasting()">
       <span>Consult the Oracle</span>
     </button>
   </div>
 
   <!-- Casting Overlay -->
-  <div class="casting-overlay" id="castingOverlay">
+  <div class="casting-overlay" id="castingOverlay" role="status" aria-live="polite">
     <div class="yarrow-container" id="yarrowAnim"></div>
     <div class="casting-symbol">蓍</div>
     <div class="casting-text" id="castingText">Dividing the Yarrow Stalks…</div>
@@ -970,12 +976,13 @@ footer p:last-child {
     </footer>
   </div>
 </div>
+</main>
 
 <!-- Instructions modal -->
-<div class="instructions-overlay" id="instructionsModal">
+<div class="instructions-overlay" id="instructionsModal" role="dialog" aria-modal="true" aria-labelledby="instructionsTitle">
   <div class="instructions-modal">
     <button class="instructions-close" onclick="closeInstructions()">Close</button>
-    <div class="instructions-modal-title">How to Use the Oracle</div>
+    <div class="instructions-modal-title" id="instructionsTitle">How to Use the Oracle</div>
     <div class="instructions-modal-text">
       <p>The I Ching is an ancient book of wisdom and divination. As an Oracle, it responds to questions about any matter of importance, speaking to what is in your heart. To consult the Oracle, concentrate on your question as you enter it and press the &ldquo;Consult the Oracle&rdquo; bar. The answer will be in metaphoric form which requires interpretation. It indicates the path that the superior man would take. The choice of whether to follow that path is always up to you.</p>
       <p>The Oracle&rsquo;s answers take one of two forms. In the first, you&rsquo;ll receive a single Hexagram, all in black, and the related interpretations as your answer. However, if the initial Hexagram has one or more moving lines, which appear in red, you&rsquo;ll also receive the interpretations of those lines. The moving line interpretations must be considered in understanding the Oracle&rsquo;s answer. The moving line or lines will also generate a new Hexagram, all in black. The first Hexagram is considered to be the current situation, while the new Hexagram is an indication of how things will turn out in the future.</p>
@@ -989,9 +996,9 @@ footer p:last-child {
 </div>
 
 <!-- Email modal -->
-<div class="email-modal-overlay" id="emailModal">
+<div class="email-modal-overlay" id="emailModal" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
   <div class="email-modal">
-    <div class="email-modal-title">Save This Reading</div>
+    <div class="email-modal-title" id="emailModalTitle">Save This Reading</div>
     <div class="email-modal-subtitle">Download this reading as a text file.<br>You can then email, print, or archive it.</div>
     <div class="email-modal-buttons">
       <button class="email-modal-cancel" onclick="closeEmailModal()">Cancel</button>
